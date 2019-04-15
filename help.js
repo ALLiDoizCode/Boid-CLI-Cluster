@@ -2,9 +2,9 @@ const chalk = require('chalk');
 const log = console.log;
 const menus = {
     main:`
-    boidcmd [command] <options>
+    boidcmd-cluster [command] <options>
 
-    ${chalk.red('To uninstall boid-cli run "sudo apt purge boinc-client" then uninstall the boid-cli module')}
+    ${chalk.red('To uninstall boid-cluster-cli run "sudo apt purge boinc-client" then uninstall the boid-cluster-cli module')}
 
     setup .............. sets up boid for the first time should only run once
     install ............ attaches project and starts work if device is curently attached to an account

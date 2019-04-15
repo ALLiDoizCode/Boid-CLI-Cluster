@@ -7,6 +7,8 @@ const ora = require('ora')
 const spinner = ora()
 const readline = require('readline')
 const { spawn } = require('child_process')
+var boidEmail = process.env.BOID_EMAIL
+var boidPassword = process.env.BOID_PASSWORD
 var form = {
     email: '',
     password: '',
@@ -77,31 +79,47 @@ var rl = readline.createInterface({
 async function setupBoid(){
     var form = {}
     rl.stdoutMuted = false
-    rl.question('Boid Account Email:', (email) => {
-        form.email = email
-        rl.question('Boid Account Password: ', (password) => {
-            form.password = password
-            client.send(form,client.endPoint.authenticateUser,function(response){
-                response = JSON.parse(response)
-                if (response.invalid){
-                    console.log()
-                    console.log(response.invalid)
-                    return setupBoid()
-                }
-                client.setUserData(response)
-                rl.close()
-                setupBoinc()
-            })
+    if(boidEmail != undefined && boidPassword != undefined){
+        form.email = boidEmail
+        form.password = boidPassword
+        client.send(form,client.endPoint.authenticateUser,function(response){
+            response = JSON.parse(response)
+            if (response.invalid){
+                console.log()
+                console.log(response.invalid)
+                return setupBoid()
+            }
+            client.setUserData(response)
+            rl.close()
+            setupBoinc()
         })
-        rl.stdoutMuted = true
-        // rl.history = rl.history.slice(1)
-    })
-    
-    rl._writeToOutput = function _writeToOutput(stringToWrite) {
-      if (rl.stdoutMuted)
-        rl.output.write("*")
-      else
-        rl.output.write(stringToWrite)
+    }else {
+        rl.question('Boid Account Email:', (email) => {
+            form.email = email
+            rl.question('Boid Account Password: ', (password) => {
+                form.password = password
+                client.send(form,client.endPoint.authenticateUser,function(response){
+                    response = JSON.parse(response)
+                    if (response.invalid){
+                        console.log()
+                        console.log(response.invalid)
+                        return setupBoid()
+                    }
+                    client.setUserData(response)
+                    rl.close()
+                    setupBoinc()
+                })
+            })
+            rl.stdoutMuted = true
+            // rl.history = rl.history.slice(1)
+        })
+        
+        rl._writeToOutput = function _writeToOutput(stringToWrite) {
+          if (rl.stdoutMuted)
+            rl.output.write("*")
+          else
+            rl.output.write(stringToWrite)
+        }
     }
 }
 
