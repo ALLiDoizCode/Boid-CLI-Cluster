@@ -1,6 +1,6 @@
 {
-  "name": "boidcmd-cluster",
-  "version": "1.0.6",
+  "name": "boidcmd-cluster-pi",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "boidcmd-cluster": "bin/boidcmd-cluster"
+    "boidcmd-cluster": "bin/boidcmd-clusteri-pi"
   },
   "dependencies": {
     "chalk": "^2.4.1",
