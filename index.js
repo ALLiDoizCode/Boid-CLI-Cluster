@@ -82,8 +82,7 @@ async function setupBoid(){
     if(boidEmail != undefined && boidPassword != undefined){
         form.email = boidEmail
         form.password = boidPassword
-        console.log(form)
-        /*client.send(form,client.endPoint.authenticateUser,function(response){
+        client.send(form,client.endPoint.authenticateUser,function(response){
             response = JSON.parse(response)
             if (response.invalid){
                 console.log()
@@ -93,7 +92,7 @@ async function setupBoid(){
             client.setUserData(response)
             rl.close()
             setupBoinc()
-        })*/
+        })
     }else {
         rl.question('Boid Account Email:', (email) => {
             form.email = email

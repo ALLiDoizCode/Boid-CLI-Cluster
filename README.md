@@ -13,9 +13,9 @@
 </p>
 
 
-# Boid CLI
+# Boid-Cluster CLI
 
-> A linux command line interface for Boid 
+> A linux command line interface for creating Boid clusters 
 
 ### From a fresh Debian/Ubuntu install:
 ```shell
@@ -33,13 +33,13 @@ nvm install node
 > install this package first
 
 ```shell
-$ npm install boidcmd -g
+$ npm install boidcmd-cluster -g
 ```
 
 > now setup boid 
 
 ```shell
-$ boidcmd setup
+$ boidcmd-cluster setup
 ```
 ##### Note: The setup phase runs: 
 sudo apt install boinc-client -y
@@ -49,5 +49,5 @@ sudo apt install boinc-client -y
 > additional commands can be found in the help menu
 
 ```shell
-$ boidcmd help
+$ boidcmd-cluster help
 ```
