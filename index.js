@@ -9,8 +9,6 @@ const readline = require('readline')
 const { spawn } = require('child_process')
 var boidEmail = process.env.BOID_EMAIL
 var boidPassword = process.env.BOID_PASSWORD
-console.log(boidEmail)
-console.log(boidPassword)
 var form = {
     email: '',
     password: '',
