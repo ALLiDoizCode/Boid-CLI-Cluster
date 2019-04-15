@@ -19,7 +19,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "boidcmd-cluster": "bin/boidcmd-clusteri-pi"
+    "boidcmd-cluster": "bin/boidcmd-cluster-pi"
   },
   "dependencies": {
     "chalk": "^2.4.1",
