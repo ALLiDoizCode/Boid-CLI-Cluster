@@ -79,7 +79,7 @@ var rl = readline.createInterface({
 async function setupBoid(){
     var form = {}
     rl.stdoutMuted = false
-    if(boidEmail =! undefined && boidPassword != undefined){
+    if(boidEmail != undefined && boidPassword != undefined){
         form.email = boidEmail
         form.password = boidPassword
         console.log(form)
