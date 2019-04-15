@@ -39,7 +39,7 @@ $ npm install boidcmd-cluster -g
 > now setup boid 
 
 ```shell
-$ set email and password ENV Vars
+$ set email and password ENV VARS
 
 LINUX
 csh/tcsh: setenv BOID_EMAIL value
