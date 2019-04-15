@@ -39,6 +39,19 @@ $ npm install boidcmd-cluster -g
 > now setup boid 
 
 ```shell
+$ set email and password ENV Vars
+
+LINUX
+csh/tcsh: setenv BOID_EMAIL value
+csh/tcsh: setenv BOID_PASSWORD value 
+
+bash/ksh: export BOID_EMAIL=value
+bash/ksh: export BOID_PASSWORD=value
+
+MAC OSX
+export BOID_EMAIL=value
+export BOID_PASSWORD=value
+
 $ boidcmd-cluster setup
 ```
 ##### Note: The setup phase runs: 
